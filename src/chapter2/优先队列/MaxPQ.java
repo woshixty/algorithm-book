@@ -14,23 +14,30 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     //用a[]中的元素创建一个优先队列
     public MaxPQ(Key[] a) {
-
+        // TODO: 2021/10/21 暂不实现
     }
 
     //向优先队列中插入一个元素
     public void insert(Key v) {
         pq[++N] = v;
-
+        swim(N);
     }
 
     //返回最大元素
     public Key max() {
-        return null;
+        return pq[1];
     }
 
     //删除并返回最大元素
     public Key delMax() {
-        return null;
+        Key key = pq[1];
+        //将其和最后一个对象交换
+        exch(1, N--);
+        //防止对象游离
+        pq[N+1] = null;
+        //恢复堆的有序性
+        sink(1);
+        return key;
     }
 
     //返回队列是否为空
@@ -88,5 +95,6 @@ public class MaxPQ<Key extends Comparable<Key>> {
     }
 
     public static void main(String[] args) {
+
     }
 }
