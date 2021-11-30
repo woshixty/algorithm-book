@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+//广度优先搜索
 public class Solution {
     public int[] levelOrder(TreeNode root) {
         if (root == null)
