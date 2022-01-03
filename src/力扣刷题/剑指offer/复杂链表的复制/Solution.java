@@ -55,3 +55,32 @@ class Solution2 {
         return headNew;
     }
 }
+
+class Solution3 {
+    public Node copyRandomList(Node head) {
+        Node node = head;
+        while(node != null) {
+            Node newNode = new Node(node.val);
+            newNode.next = node.next;
+            node.next = newNode;
+            node = newNode.next;
+        }
+        node = head;
+        while(node != null) {
+            if (node.random != null)
+                node.next.random = node.random.next;
+            node = node.next.next;
+        }
+        node = head;
+        Node newHead = head.next;
+        while(node.next.next != null) {
+            Node newNode = node.next;
+            Node nextNode = node.next.next;
+            newNode.next = newNode.next.next;
+            node.next = nextNode;
+            node = nextNode;
+        }
+        node.next = null;
+        return newHead;
+    }
+}

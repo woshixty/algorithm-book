@@ -6,7 +6,6 @@ public class MinStack {
     private Stack<Integer> stackA;
     private Stack<Integer> stackB;
 
-    /** initialize your data structure here. */
     public MinStack() {
         stackA = new Stack();
         stackB = new Stack();

@@ -1,6 +1,7 @@
 package 力扣刷题.剑指offer.反转链表;
 
 public class Solution {
+    /**
     public ListNode reverseList(ListNode head) {
         if (head == null)
             return null;
@@ -22,5 +23,25 @@ public class Solution {
         H2.next = H1;
         H3.next = H2;
         return H3;
+    }
+     */
+    //据说还有递归法
+    public ListNode reverseList(ListNode head) {
+        if (head == null)
+            return null;
+        if (head.next == null)
+            return head;
+        ListNode cur = head;
+        ListNode temp = head.next;
+        ListNode pre = null;
+        while (temp != null) {
+            //循环变换链表的指针
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+            temp = temp.next;
+        }
+        cur.next = pre;
+        return cur;
     }
 }
