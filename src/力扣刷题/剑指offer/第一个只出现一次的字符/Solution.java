@@ -1,11 +1,11 @@
 package 力扣刷题.剑指offer.第一个只出现一次的字符;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
+import java.util.*;
 
 public class Solution {
+    /**
     public char firstUniqChar(String s) {
         Map<Character, Integer> position = new HashMap<>();
         Queue<Character> queue = new LinkedList<>();
@@ -22,6 +22,19 @@ public class Solution {
             Character poll = queue.poll();
             if (position.containsKey(poll) && !position.get(poll).equals(-1))
                 return poll;
+        }
+        return ' ';
+    }
+     */
+
+    public char firstUniqChar(String s) {
+        char[] chars = s.toCharArray();
+        Map<Character, Boolean> map = new LinkedHashMap<>();
+        for (char aChar : chars)
+            map.put(aChar, map.containsKey(aChar));
+        for (Map.Entry<Character, Boolean> characterBooleanEntry : map.entrySet()) {
+            if (!characterBooleanEntry.getValue())
+                return characterBooleanEntry.getKey();
         }
         return ' ';
     }
