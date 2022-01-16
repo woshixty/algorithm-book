@@ -3,6 +3,7 @@ package 力扣刷题.剑指offer.从上到下打印二叉树II;
 import java.util.*;
 
 public class Solution {
+    /**
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new LinkedList<>();
         Deque<TreeNode> queue = new ArrayDeque<>();
@@ -21,6 +22,29 @@ public class Solution {
                     queue.offer(poll.right);
             }
             result.add(list1);
+        }
+        return result;
+    }
+     */
+
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new LinkedList<>();
+        if (root == null)
+            return result;
+        Deque<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode poll = queue.poll();
+                list.add(poll.val);
+                if (poll.left != null)
+                    queue.offer(poll.left);
+                if (poll.right != null)
+                    queue.offer(poll.right);
+            }
+            result.add(list);
         }
         return result;
     }

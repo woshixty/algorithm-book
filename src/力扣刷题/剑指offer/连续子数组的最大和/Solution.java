@@ -1,6 +1,7 @@
 package 力扣刷题.剑指offer.连续子数组的最大和;
 
 public class Solution {
+    /**
     public int maxSubArray(int[] nums) {
         int length = nums.length;
         int[] sum = new int[length];
@@ -15,5 +16,24 @@ public class Solution {
                 max = sum[i];
         }
         return max;
+    }
+     */
+
+    public int maxSubArray(int[] nums) {
+        int length = nums.length;
+        int[] max = new int[length];
+        int maxNumber = nums[0];
+        for (int i = 1; i < length; i++) {
+            if (max[i - 1] < 0) {
+                if (nums[i] > maxNumber)
+                    maxNumber = nums[i];
+                max[i] = nums[i];
+            }
+            else
+                max[i] = max[i - 1] + nums[i];
+            if (max[i] > maxNumber)
+                maxNumber = max[i];
+        }
+        return maxNumber;
     }
 }

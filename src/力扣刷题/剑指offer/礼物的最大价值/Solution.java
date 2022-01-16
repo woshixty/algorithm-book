@@ -5,8 +5,8 @@ public class Solution {
         int m = grid.length;
         int n = grid[0].length;
         int[][] value = new int[m + 1][n + 1];
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
                 int max = value[i + 1][j] > value[i][j + 1] ? value[i + 1][j] : value[i][j + 1];
                 value[i + 1][j + 1] = grid[i][j] + max;
             }

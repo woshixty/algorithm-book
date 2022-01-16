@@ -1,9 +1,14 @@
 package 力扣刷题.剑指offer.把数字翻译成字符串;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Solution {
     int[] a;
     int length;
+    List<Integer> list;
 
+    /**
     public int translateNum(int num) {
         a = new int[12];
         length = 0;
@@ -40,5 +45,33 @@ public class Solution {
 
     public static void main(String[] args) {
         new Solution().translateNum(506);
+    }
+     */
+
+    public int translateNum(int num) {
+        if (num >= 0 && num <= 9)
+            return 1;
+        list = new LinkedList<>();
+        while (num != 0) {
+            list.add(num % 10);
+            num /= 10;
+        }
+        return cal(list.size());
+    }
+
+    public int cal(int length) {
+        if (length == 0)
+            return 1;
+        int number = list.get(length) * 10 + list.get(length - 1);
+        if (number <= 25)
+            return cal(length - 1) + cal(length - 2);
+        else
+            return cal(length - 1);
+    }
+
+    public static void main(String[] args) {
+        LinkedList<Integer> integers = new LinkedList<>();
+        integers.add(12);
+        integers.get(1);
     }
 }
