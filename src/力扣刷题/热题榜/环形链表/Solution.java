@@ -1,4 +1,4 @@
-package 力扣刷题.热题榜.三数之和;
+package 力扣刷题.热题榜.环形链表;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,4 +36,14 @@ public class Solution {
         }
         return result;
     }
+
+    public static void main(String[] args) {
+        new Solution().threeSum(new int[]{0, 0, 0, 0});
+//        int[] ints = {-1, 0, 1, 2, -1, -4};
+//        Arrays.sort(ints);
+//        for (int anInt : ints) {
+//            System.out.println(anInt);
+//        }
+    }
+
 }
