@@ -7,5 +7,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="jcommon-1.0.17" level="project" />
+    <orderEntry type="library" exported="" name="jfreechart-1.0.14" level="project" />
+    <orderEntry type="library" exported="" name="lombok-1.18.20" level="project" />
   </component>
 </module>
