@@ -28,7 +28,7 @@ public class LineChart {
                 PlotOrientation.VERTICAL, // 图像的显示形式（水平或者垂直）
                 true, // 是否显示子标题
                 true, // 是否生成提示的标签
-                true); // 是否生成URL链接 // 处理图形上的乱码 // 处理主标题的乱码、
+                true); // 是否生成URL链接 // 处理图形上的乱码 // 处理主标题的乱码
         chart.getTitle().setFont(new Font("宋体", Font.BOLD, 18));
         // 处理子标题乱码
         chart.getLegend().setItemFont(new Font("宋体", Font.BOLD, 15));
@@ -75,8 +75,7 @@ public class LineChart {
 //        }
         // 使用ChartFrame对象显示图像
         ChartFrame frame = new ChartFrame("zfc", chart);
+        frame.setSize(1400, 1200);
         frame.setVisible(true);
-        frame.setSize(1200, 800);
-        frame.pack();
     }
 }
